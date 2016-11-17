@@ -1,0 +1,27 @@
+<html>
+  <head>
+      <% include partials/head %>
+  </head>
+<body class="container">
+    <header>
+      <% include partials/header %>
+    </header>
+    <h1>Formulario de contacto</h1>
+    <div class="panel panel-default container" style="padding: 10px;">
+    <form action="/contacto" method="POST">
+      <div>
+        <label for="say">Say: </label>
+        <input name="say" value="Hi"/>
+      </div><br/>
+      <div>
+        <label for="to">To: </label>
+        <input name="to" value="Express forms"/>
+      </div><br/>
+      <button type="submit">Send my greetings</button>
+    </form>
+    </div>
+  <footer>
+    <% include partials/footer %>
+  </footer>
+  </body>
+</html>

@@ -14,6 +14,16 @@ router.get('/', function(req, res) {
   	});
 });
 
+router.get('/contacto', function(req, res){
+	res.render('form.ejs');
+});
+
+router.post('/contacto', function(req, res){
+	console.log(req.body);
+	console.log(req.body.say);
+    res.send("recieved your request!");
+});
+
 router.get('/hello', function(req, res){
 	res.send("Hello World!");
 });
