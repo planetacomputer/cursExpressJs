@@ -1,0 +1,15 @@
+<!-- https://scotch.io/tutorials/use-ejs-to-template-your-node-application -->
+<html>
+	<body>
+		<h1>Hola que tal como estamos Express.js pero con EJS</h1>
+		<div>Name is <%= name %></div>
+		<div>Url is <%= url %></div>
+		<hr>
+		<h2>Tus bebidas preferidas son: </h2>
+		 <ul>
+		 <% drinks.forEach(function(drink) { %>
+		 	<li><%= drink.name %> - <%= drink.drunkness %></li>
+		 <% }); %>
+		 </ul>
+	</body>
+</html>
