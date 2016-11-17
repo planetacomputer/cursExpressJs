@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
         name: "TutorialsPoint", 
         url:"http://www.tutorialspoint.com",
         drinks: drinks
-  });
+  	});
 });
 
 router.get('/hello', function(req, res){

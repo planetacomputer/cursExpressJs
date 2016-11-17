@@ -5,8 +5,11 @@ var app = express();
 app.set('view engine', 'ejs');
 app.set('views','./views');
 
-var things = require('./things.js'); 
+var things = require('./things.js');
 
+app.use(express.static('public'));
+app.use('/js', express.static('js'));
+app.use('/img', express.static('img'));
 
 //Simple request time logger
 app.use('/hotel', function(req, res, next){

@@ -1,6 +1,16 @@
-<!-- https://scotch.io/tutorials/use-ejs-to-template-your-node-application -->
-<html>
-	<body>
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include partials/head %>
+</head>
+<body class="container">
+	<header>
+        <% include partials/header %>
+    </header>
+
+    <main>
 		<h1>Hola que tal como estamos Express.js pero con EJS</h1>
 		<div>Name is <%= name %></div>
 		<div>Url is <%= url %></div>
@@ -8,8 +18,14 @@
 		<h2>Tus bebidas preferidas son: </h2>
 		 <ul>
 		 <% drinks.forEach(function(drink) { %>
-		 	<li><%= drink.name %> - <%= drink.drunkness %></li>
+		 	<%if (drink.drunkness >= 5) { %>
+		 		<li><%= drink.name %> - <%= drink.drunkness %></li>
+		 	<% }; %>
 		 <% }); %>
 		 </ul>
+	</main>
+    <footer>
+        <% include partials/footer %>
+    </footer>
 	</body>
 </html>
