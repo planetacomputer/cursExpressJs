@@ -28,6 +28,12 @@ app.use('/img', express.static('img'));
     next();
 });*/
 
+app.use(function(req,res,next){
+    req.db = db;
+    next();
+});
+
+
 //Simple request time logger
 app.use('/hotel', function(req, res, next){
 	console.log("A new request received at " + Date.now());
@@ -37,6 +43,7 @@ app.use('/hotel', function(req, res, next){
 });
 
 app.get('/jaja', function(req, res, next){
+
 	var mongoose = require('mongoose');
 	var Speaker = mongoose.model('Speaker');
 	Speaker.find({shortname: "Riley_Rewington"}, 
